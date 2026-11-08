@@ -11,25 +11,29 @@
     <div class="Main_box">
         <h1 class="text-change-color">Trang chủ</h1>
     </div>
-    <div class="Left_box">
-        <button onclick="window.location.href='index.html';"
-        class="testbtn"><i class="fa fa-home"></i> Trang chủ</button>
-
-        <button onclick="window.location.href='Gioi_thieu.html';"
-        class="testbtn"><i class="fa fa-bars"></i> Giới thiệu</button>
-
-        <button onclick="window.location.href='lien_he.html';"
-        class="testbtn"><i class="fa fa-phone"></i> Liên hệ</button>
-    </div>
     <div class="background-changer">
         <h2 class="text-change-color">
             chào mừng đến website của tui
         </h2>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Menu</button>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="Left_box">
+                    <button onclick="window.location.href='index.html';"
+                    class="testbtn"><i class="fa fa-home"></i> Trang chủ</button>
+
+                    <button onclick="window.location.href='Gioi_thieu.html';"
+                    class="testbtn"><i class="fa fa-bars"></i> Giới thiệu</button>
+
+                    <button onclick="window.location.href='lien_he.html';"
+                    class="testbtn"><i class="fa fa-phone"></i> Liên hệ</button>
+                </div>
+        </div>
         <p class="text-change-color">
             đây là một website giới thiệu về tui
         </p>
 
-        <button onclick="myFunction()"><h2 style="text-align: center;">Bảng điểm </h2></button>
+        <button onclick="toggle()"><h2 style="text-align: center;">Bảng điểm </h2></button>
     
             <table id="button_table">
                 <tr>
@@ -82,10 +86,9 @@
                     <td>8.8</td>
                 </tr>
             </table>
-        
 
         <script>
-        function myFunction() {
+        function toggle() {
             var x = document.getElementById("button_table");
            
             if (x.style.display === "none") {
@@ -94,8 +97,32 @@
                 x.style.display = "none";
             }
             }
-        </script>
 
+
+
+            function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+            }
+        }
+        }
+        </script>
+      
+            <!-- <video width="800" controls>
+                <source src="1027 (1).mp4" type="video/mp4">
+            </video> -->
+        
     </div>
 </body>
 </html>

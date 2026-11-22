@@ -49,8 +49,8 @@ th, td{
 }
 .witter {
     
-    /* width: 800px;
-    height: 100px; */
+    width: 800px;
+    height: 100px;
     border: 2px solid #333;
     border-radius: 100px;   
     /* text-align:center; */
@@ -179,3 +179,19 @@ html {
     calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0
   }
 }
+
+@media (orientation: portrait),(min-width: 600px){
+    .witter {
+    border: 2px solid #333;
+    border-radius: 20px;   
+    /* text-align:center; */
+    background-color: #c6f9fb;
+    /* position: absolute; */
+    border: 2px solid black;
+    margin: 50px;
+    padding: 30px;
+    
+    }
+
+}
+    
